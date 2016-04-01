@@ -15,6 +15,7 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.rest.model.Articles;
 import com.rest.model.ArticlesShortcut;
+import com.rest.model.EmailTemplate;
 import com.rest.service.ArticleService;
 import com.rest.service.EmailService;
 
@@ -57,8 +58,31 @@ public class CountryController {
 	 {  
 		System.out.println("Json: "+json);
 		
-		emailService.sendEmail("just4myapplication@gmail.com", "just4myapplication@gmail.com", "first message",
-				"Something special for that's big occasion?");
+		EmailTemplate emailTemplate=new EmailTemplate();
+		
+		ObjectMapper mapper=new ObjectMapper();
+		
+		try {
+			emailTemplate=mapper.readValue(json, EmailTemplate.class);
+		} catch (JsonParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (JsonMappingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		// message to website owner 
+		emailService.sendEmail("just4myapplication@gmail.com", "just4myapplication@gmail.com", "New message from EasyTutorials",
+				"Message from: "+ emailTemplate.getSenderEmail()+"\n"+emailTemplate.getContent());
+		
+		// message to sender with information about delivered message to website owner
+		emailService.sendEmail(emailTemplate.getSenderEmail(), "just4myapplication@gmail.com", "Message from EasyTutorials",
+				"Many thanks for Your message. We will answer as fast as possible. \n\nThis message was generated automatically,"
+				+ "	please do not answer on this message.");
 	    
 	 } 
 
