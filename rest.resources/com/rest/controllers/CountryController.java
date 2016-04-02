@@ -64,6 +64,16 @@ public class CountryController {
 		
 		try {
 			emailTemplate=mapper.readValue(json, EmailTemplate.class);
+			
+			// message to website owner 
+			emailService.sendEmail("just4myapplication@gmail.com", "just4myapplication@gmail.com", "New message from EasyTutorials",
+					"Message from: "+ emailTemplate.getSenderEmail()+"\n"+emailTemplate.getContent());
+			
+			// message to sender with information about delivered message to website owner
+			emailService.sendEmail(emailTemplate.getSenderEmail(), "just4myapplication@gmail.com", "Message from EasyTutorials",
+					"Many thanks for Your message. We will answer as fast as possible. \n\nThis message was generated automatically,"
+					+ "	please do not answer on this message.");
+			
 		} catch (JsonParseException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -75,14 +85,7 @@ public class CountryController {
 			e.printStackTrace();
 		}
 		
-		// message to website owner 
-		emailService.sendEmail("just4myapplication@gmail.com", "just4myapplication@gmail.com", "New message from EasyTutorials",
-				"Message from: "+ emailTemplate.getSenderEmail()+"\n"+emailTemplate.getContent());
 		
-		// message to sender with information about delivered message to website owner
-		emailService.sendEmail(emailTemplate.getSenderEmail(), "just4myapplication@gmail.com", "Message from EasyTutorials",
-				"Many thanks for Your message. We will answer as fast as possible. \n\nThis message was generated automatically,"
-				+ "	please do not answer on this message.");
 	    
 	 } 
 
