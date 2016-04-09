@@ -1,0 +1,19 @@
+@CHARSET "UTF-8";
+
+.btnAboutUs {
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #fffffc;
+  font-size: 20px;
+  background: #3db2e1;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.btnAboutUs:hover {
+  background: #0a5470;
+  text-decoration: none;
+  color: #7e7e7e;
+}

@@ -1,0 +1,465 @@
+@CHARSET "UTF-8";
+
+html, body
+{
+    height: 100%;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    
+    
+	
+}
+
+/* Home Style */
+header {
+	background: url(http://freedomreply.com/wp-content/uploads/2014/07/Free-Download-Background-Images-For-Website-Design-3.jpg) no-repeat bottom center;
+	background-size: cover;
+	color: #d9e0e2;
+	position: relative;
+/* 	position:static; */
+	height: 100%;
+	 vertical-align: top;
+}
+header p {
+	color: #d9e0e2;
+	font-size: 20px;
+ 	margin-bottom: 80px; 
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	 vertical-align: top;
+}
+
+.aboutUs {
+	/*display: flex;
+/* 	background-color: #3db2e1; */
+	background-color: #125772;
+	background-size: cover;
+	color: #333;
+	position: relative;
+	height: 100%;
+	padding: 10px;
+}
+.aboutUs p {
+	color: #ffffff;
+	font-size: 20px;
+ 	margin-bottom: 80px; 
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+.tutorials {
+/* 	background-color: #125a76; */
+	background-color: #0a3241;
+	color: #3db2e1;
+	text-align: center;
+	padding: 45px;
+	position: relative;
+	height: 100%;
+}
+
+.tutorials img {
+	width: 65%;
+}
+
+.tutorials p {
+	color: #125a76;
+	font-size: 20px;
+ 	margin-bottom: 80px; 
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	 vertical-align: top;
+}
+
+.contact {
+
+	/*display: flex;
+/* 	background-color: #3db2e1; */
+
+	background: url(	http://cdn.wonderfulengineering.com/wp-content/uploads/2014/10/simple-wallpaper-35.jpg) no-repeat bottom center;
+/* 	background-color: #535353; */
+	background-size: cover;
+	color: #333;
+	position: relative;
+	height: 100%;
+	padding: 10px;
+	padding-top: 10%;
+}
+.contact p {
+	color: #ffffff;
+	font-size: 20px;
+ 	margin-bottom: 80px; 
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+
+.img-container{
+	padding: 20px;
+	max-width: 20%;
+	max-height: 10%;
+	}
+	
+.img-container :hover{
+	
+	cursor: pointer; 
+	opacity: 0.4;
+    filter: alpha(opacity=40);
+}
+	
+.pictureBox {
+    overflow:hidden;
+    list-style:none;
+    position: central;
+    color: white;
+    
+}
+
+.pictureBox li {
+    text-align:center;
+    margin:0.6em;
+}
+
+
+.pictureBox li :hover {
+	opacity: 0.4;
+    filter: alpha(opacity=40);
+    cursor: pointer; cursor: hand;
+}
+
+
+.intro-text {
+	position: relative;
+	padding-top: 250px;
+	padding-right: 0;
+	padding-left: 0;
+	padding-bottom: 170px;
+}
+.intro-text H1 {
+	font-size: 70px;
+	text-transform: uppercase;
+	color: #d9e0e2;
+	letter-spacing: 2px;
+}
+.color {	
+	color: #3db2e1;
+}
+
+
+.tutorial-text {
+	position: relative;
+	padding-top: 170px;
+	padding-right: 0;
+	padding-left: 0;
+	padding-bottom: 40px;
+}
+.tutorial-text H1 {
+	font-size: 70px;
+	text-transform: uppercase;
+	color: #d9e0e2;
+	letter-spacing: 2px;
+}
+
+
+.aboutUs-text {
+	position: relative;
+	padding-top: 100px;
+	padding-right: 0;
+	padding-left: 0;
+	padding-bottom: 5px;
+}
+.aboutUs-text H1 {
+	font-size: 70px;
+	text-transform: uppercase;
+	color: #d9e0e2;
+	letter-spacing: 2px;
+}
+
+
+.java-basic-text {
+	position: relative;
+	padding-top: 50px;
+	padding-right: 0;
+	padding-left: 0;
+	padding-bottom: 40px;
+}
+.java-basic-text H1 {
+	font-size: 70px;
+	text-transform: uppercase;
+	color: #d9e0e2;
+	letter-spacing: 2px;
+}
+
+
+.menudiv{
+	background-color: #d0e4fa;
+    margin    : auto;
+ 	 border     : 1px solid black; 
+    padding    : 0px;
+    height-min : 100%;
+    
+    
+    background-image: url(http://ocean.eu.com/wp-content/uploads/2013/04/IT-security-lg.jpg);
+	background-repeat: no-repeat;
+
+	background-position: center center;
+	background-size: cover;
+    
+}
+
+.welcomediv {
+    background-color: #ff0080;
+    margin    : auto;
+    border     : 1px solid black; 
+   	width      : 100%;
+    min-height	   : 50%;
+   
+
+    
+	
+}
+
+.smalldiv{
+	background-color: #d9a4fc;
+    margin    : auto;
+    border     : 3px solid black;
+    padding    : 0px;
+}
+
+.smalldivsecond{
+	background-color: #19a9fc;
+    margin    : auto;
+    border     : 3px solid black;
+    padding    : 0px;
+    flow : left;
+    overflow: hidden;
+}
+
+
+/* zakladkiartykulow */
+
+.article-tabs{
+	padding-top: 10px;
+	margin-left: 50%;
+	margin-bottom: 10px;
+  
+}
+
+
+
+.article-tabs ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+.article-tabs ul li {
+	display: inline-block;
+		cursor: pointer;
+}
+
+.article-tabs ul li a {
+/* 	background: #000; */
+/* 	padding: 10px 20px; */
+/* 	text-transform: lowercase; */
+/* 	font-weight: bold; */
+/* 	font-size: 18pt; */
+	
+		
+/* border-radius: 28px; */
+/*   font-family: Arial; */
+/*   color: #fffffc; */
+/*   font-size: 20px; */
+/*   background: #3db2e1; */
+/*   padding: 10px 20px 10px 20px; */
+/*   text-decoration: none; */
+  
+
+}
+
+.article-tabs ul li a:hover {
+/*  background: #0a5470; */
+/*   text-decoration: none; */
+/*   color: #7e7e7e; */
+}
+
+.article-content {
+	border-top: 8px solid #ffffff;
+	padding: 10px;
+	margin-top: 4%;
+	font-size: 18pt;
+	font-family: sans;
+	color: #c0c0c0
+}
+
+
+
+/* CONTACT FORM ! */
+
+
+/*######## Smart Green ########*/
+.smart-green {
+/*     margin-left:auto; */
+    margin-right:auto;
+	margin-left: 40px;
+    max-width: 60%;
+    min-height: 80%;
+    background: #F8F8F8;
+    padding: 30px 30px 20px 30px;
+    font: 12px Arial, Helvetica, sans-serif;
+    color: #666;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+}
+.smart-green h1 {
+    font: 24px "Trebuchet MS", Arial, Helvetica, sans-serif;
+    padding: 20px 0px 20px 40px;
+    display: block;
+    margin: -30px -30px 10px -30px;
+    color: #FFF;
+    background: #3db2e1;
+    text-shadow: 1px 1px 1px #949494;
+    border-radius: 5px 5px 0px 0px;
+    -webkit-border-radius: 5px 5px 0px 0px;
+    -moz-border-radius: 5px 5px 0px 0px;
+    border-bottom:1px solid #89AF4C;
+
+}
+.smart-green h1>span {
+    display: block;
+    font-size: 11px;
+    color: #FFF;
+}
+
+.smart-green label {
+    display: block;
+    margin: 0px 0px 5px;
+    width: 100%;
+}
+.smart-green label>span {
+    float: left;
+    margin-top: 10px;
+    color: #5E5E5E;
+}
+.smart-green input[type="text"], .smart-green input[type="email"], .smart-green textarea, .smart-green select {
+    color: #555;
+    height: 30px;
+    line-height:15px;
+    width: 100%;
+    padding: 0px 0px 0px 10px;
+    margin-top: 2px;
+    border: 1px solid #E5E5E5;
+    background: #FBFBFB;
+    outline: 0;
+    -webkit-box-shadow: inset 1px 1px 2px rgba(238, 238, 238, 0.2);
+    box-shadow: inset 1px 1px 2px rgba(238, 238, 238, 0.2);
+    font: normal 14px/14px Arial, Helvetica, sans-serif;
+}
+.smart-green textarea{
+    height:300px;
+    padding-top: 10px;
+}
+.smart-green select {
+    background: url('down-arrow.png') no-repeat right, -moz-linear-gradient(top, #FBFBFB 0%, #E9E9E9 100%);
+    background: url('down-arrow.png') no-repeat right, -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FBFBFB), color-stop(100%,#E9E9E9));
+   appearance:none;
+    -webkit-appearance:none;
+   -moz-appearance: none;
+    text-indent: 0.01px;
+    text-overflow: '';
+    width:100%;
+    height:30px;
+}
+.smart-green .button {
+    background-color: #3db2e1;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-border-radius: 5px;
+    border: none;
+    padding: 10px 25px 10px 25px;
+    color: #FFF;
+    text-shadow: 1px 1px 1px #949494;
+}
+.smart-green .button:hover {
+    background-color:#346f9e;
+}
+
+
+/* buttons- articles */
+
+
+
+.animate
+{
+	transition: all 0.1s;
+	-webkit-transition: all 0.1s;
+}
+
+.action-button
+{
+	position: relative;
+	padding: 10px 40px;
+  margin: 0px 10px 10px 0px;
+  float: left;
+	border-radius: 10px;
+	font-family: 'Pacifico', cursive;
+	font-size: 25px;
+	color: #FFF;
+	text-decoration: none;	
+}
+
+.blue
+{
+	background-color: #3db2e1;
+	border-bottom: 5px solid #68c5e8;
+	text-shadow: 0px -2px #68c5e8;
+}
+
+.red
+{
+	background-color: #E74C3C;
+	border-bottom: 5px solid #BD3E31;
+	text-shadow: 0px -2px #BD3E31;
+}
+
+.green
+{
+	background-color: #82BF56;
+	border-bottom: 5px solid #669644;
+	text-shadow: 0px -2px #669644;
+}
+
+.yellow
+{
+	background-color: #F2CF66;
+	border-bottom: 5px solid #D1B358;
+	text-shadow: 0px -2px #D1B358;
+}
+
+.action-button:active
+{
+	transform: translate(0px,5px);
+  -webkit-transform: translate(0px,5px);
+	border-bottom: 1px solid;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
