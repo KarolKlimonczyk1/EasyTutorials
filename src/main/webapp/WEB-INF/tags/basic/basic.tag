@@ -84,7 +84,7 @@
 
 		<div class="row">
 			<div class="img-container col-xs-6 col-sm-3 col-md-2  col-xl-1">
-				<a href="http://localhost:8080/mavenWebApp/cpp-basic"  target="_blank" ><img
+				<a href="http://localhost:8080/mavenWebApp/cplus-basic"  target="_blank" ><img
 					src="http://d3mlabs.de/assets/Learning_blue_Icon-c1092b82f9eee7286a24cf70d0e11477.png"
 					alt="" /> </a>
 				<p>C++ Basic</p>

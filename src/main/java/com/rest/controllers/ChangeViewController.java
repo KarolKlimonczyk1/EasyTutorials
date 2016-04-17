@@ -16,7 +16,7 @@ public class ChangeViewController {
 	}
 	
 	
-	@RequestMapping(value = "/cpp-basic", method = RequestMethod.GET)
+	@RequestMapping(value = "/cplus-basic", method = RequestMethod.GET)
 	public String cppBasic() {
 	
 		return "cpp-basic";

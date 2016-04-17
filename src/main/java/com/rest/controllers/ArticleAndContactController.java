@@ -2,6 +2,7 @@ package com.rest.controllers;
 
 import javax.inject.Inject;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -15,25 +16,21 @@ import com.rest.service.JsonParserService;
 @RestController
 public class ArticleAndContactController {
 
-	@Inject
+	@Autowired
 	JsonParserService jsonParserService;
 
-	@Inject
+	@Autowired
 	private EmailService emailService;
 
 	@RequestMapping(value = "/list", method = RequestMethod.POST, headers = "Accept=application/json")
-	public Articles getArticle(@RequestBody String json)// HttpEntity<String>
-														// httpEntity)
+	public Articles getArticle(@RequestBody String json)
 	{
 		return jsonParserService.parseArticle(json);
-
 	}
 
 	@RequestMapping(value = "/sendEmail", method = RequestMethod.POST, headers = "Accept=application/json")
-	public void getArticles(@RequestBody String json)// HttpEntity<String>
-														// httpEntity)
+	public void sendEmail(@RequestBody String json)
 	{
-
 		EmailTemplate emailTemplate = jsonParserService.parseEmail(json);
 
 		// message to website owner
@@ -43,8 +40,7 @@ public class ArticleAndContactController {
 				"Message from: " + emailTemplate.getSenderEmail() + "\n"
 						+ emailTemplate.getContent());
 
-		// message to sender with information about delivered message to website
-		// owner
+		// message to sender with information about delivered message to website owner
 		emailService
 				.sendEmail(
 						emailTemplate.getSenderEmail(),

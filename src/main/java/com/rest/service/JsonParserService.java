@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import javax.inject.Inject;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.fasterxml.jackson.core.JsonParseException;
@@ -16,7 +17,7 @@ import com.rest.model.EmailTemplate;
 @Service
 public class JsonParserService {
 
-	@Inject
+	@Autowired
 	private ArticleService articleService;
 
 	public Articles parseArticle(String json) {
