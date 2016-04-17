@@ -25,6 +25,7 @@ public class ArticleAndContactController {
 	@RequestMapping(value = "/list", method = RequestMethod.POST, headers = "Accept=application/json")
 	public Articles getArticle(@RequestBody String json)
 	{
+		System.out.println(json);
 		return jsonParserService.parseArticle(json);
 	}
 
