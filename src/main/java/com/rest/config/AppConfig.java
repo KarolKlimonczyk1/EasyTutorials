@@ -55,4 +55,5 @@ public class AppConfig {
 		javaMailSender.setJavaMailProperties(javaMailProperties());
 		return javaMailSender;
 	}
+
 }

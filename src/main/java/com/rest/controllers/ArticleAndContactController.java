@@ -1,17 +1,14 @@
 package com.rest.controllers;
 
-import javax.inject.Inject;
-
+import com.rest.model.Articles;
+import com.rest.model.EmailTemplate;
+import com.rest.service.EmailService;
+import com.rest.service.JsonParserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.rest.model.Articles;
-import com.rest.model.EmailTemplate;
-import com.rest.service.EmailService;
-import com.rest.service.JsonParserService;
 
 @RestController
 public class ArticleAndContactController {
@@ -25,7 +22,7 @@ public class ArticleAndContactController {
 	@RequestMapping(value = "/list", method = RequestMethod.POST, headers = "Accept=application/json")
 	public Articles getArticle(@RequestBody String json)
 	{
-		System.out.println(json);
+		System.out.println("List controller");
 		return jsonParserService.parseArticle(json);
 	}
 

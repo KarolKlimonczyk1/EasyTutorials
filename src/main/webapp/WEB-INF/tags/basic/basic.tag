@@ -1,6 +1,7 @@
 <%-- <%@ tag language="java" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> --%>
 
+<meta http-equiv="Content-type" content="text/html;charset=ISO-8859-1">
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
@@ -26,6 +27,7 @@
 <script src="angular.js"></script>
 <script src="emailController.js"></script>
 <script src="loading.js"></script>
+	<script src="articleEditorController.js"></script>
 
 <!-- initialize smooth scroll -->
 <script>
@@ -33,6 +35,41 @@
 </script>
 <!-- ----------------------------- -->
 
+	<%--------------Text editor-----------------------%>
+	<script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+	<%--<script>tinymce.init({--%>
+	<%--selector:'textarea',--%>
+	<%----%>
+	<%--plugins: "image",--%>
+	<%--menubar: "insert",--%>
+	<%--toolbar: "image",--%>
+	<%--image_list: [--%>
+	<%--{title: 'My image 1', value: 'http://www.tinymce.com/my1.gif'},--%>
+	<%--{title: 'My image 2', value: 'http://www.moxiecode.com/my2.gif'}--%>
+	<%--]--%>
+
+
+	<%--});</script>--%>
+
+	<script>
+		tinymce.init({
+			selector: 'custom_textarea',
+			height: 500,
+			plugins: [
+				"advlist autolink lists link image charmap print preview anchor",
+				"searchreplace visualblocks code fullscreen",
+				"insertdatetime media table contextmenu paste imagetools"
+			],
+			toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
+			imagetools_cors_hosts: ['www.tinymce.com', 'codepen.io'],
+			content_css: [
+				'//fast.fonts.net/cssapi/e6dc9b99-64fe-4292-ad98-6974f93cd2a2.css',
+				'//www.tinymce.com/css/codepen.min.css'
+			]
+		});
+	</script>
+
+	<%--------------------------------------------------%>
 
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
@@ -85,8 +122,8 @@
 		<div class="row">
 			<div class="img-container col-xs-6 col-sm-3 col-md-2  col-xl-1">
 				<a href="http://localhost:8080/mavenWebApp/cplus-basic"  target="_blank" ><img
-					src="http://d3mlabs.de/assets/Learning_blue_Icon-c1092b82f9eee7286a24cf70d0e11477.png"
-					alt="" /> </a>
+						src="http://www.paperoff.com.br/img/brain.png"
+						alt="" /> </a>
 				<p>C++ Basic</p>
 			</div>
 			<div class="img-container col-xs-6 col-sm-3 col-md-2  col-xl-1">
@@ -134,19 +171,17 @@
 		<div class="article-tabs">
 			<ul>
 				<li class="action-button shadow animate blue"><a
-					data-ng-click="changeArticle(1)">Projects</a></li>
+						data-ng-click="changeArticle(1)">Projects</a></li>
 				<li class="action-button shadow animate blue"><a
-					data-ng-click="changeArticle(2)">History</a></li>
+						data-ng-click="changeArticle(2)">History</a></li>
 				<li class="action-button shadow animate blue"><a
-					data-ng-click="changeArticle(3)">News</a></li>
+						data-ng-click="changeArticle(3)">News</a></li>
 				<li class="action-button shadow animate blue"><a
-					data-ng-click="changeArticle(4)">Articles</a></li>
+						data-ng-click="changeArticle(4)">Articles</a></li>
 			</ul>
 		</div>
 
 		<div class="article-content">{{article.content}}</div>
-
-
 
 
 	</div>
@@ -154,7 +189,6 @@
 	<!-- ------------contact form ---------------------- -->
 
 	<div id="contact" class="contact" data-ng-controller="ContactForm">
-
 
 		<form data-ng-submit="sendEmail(message)" class="smart-green">
 			<h1>
@@ -177,10 +211,22 @@
 	</div>
 
 
+	<div class="aboutUs" data-ng-controller="ArticleEditor">
+
+		<form data-ng-submit="setArticle()">
+			<%--<form data-ng-submit="setArticle(articleEditor.content)" >--%>
+			<custom_textarea id="myid"
+			<%--data-ng-model="articleEditor.content" placeholder="Article Editor" --%>
+			></custom_textarea>
+			<input type="submit" class="button" value="Send"/>
 
 
+		</form>
+
+	</div>
 
 
+	</div>
 
 </body>
 </html>

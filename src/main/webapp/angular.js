@@ -6,7 +6,7 @@ var articleJson = {
 
 function List($scope, $http) {
 
-	
+
 	$scope.number = 1;
 
 	articleJson = {
@@ -16,9 +16,9 @@ function List($scope, $http) {
 
 	$http.post(urlBase + '/list', articleJson).success(function(data) {
 
-		$scope.article = data;
+			$scope.article = data;
 
-	}
+		}
 
 	);
 
@@ -31,9 +31,9 @@ function List($scope, $http) {
 
 		$http.post(urlBase + '/list', articleJson).success(function(data) {
 
-			$scope.article = data;
+				$scope.article = data;
 
-		}
+			}
 
 		);
 

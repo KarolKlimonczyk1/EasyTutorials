@@ -21,5 +21,10 @@ public class ArticleServiceImpl implements ArticleService {
 		return articlesDao.getArticle(id);
 	}
 
-	
+	@Transactional
+	public void updateArticle(String topic, String content) {
+		articlesDao.updateArticle(topic, content);
+	}
+
+
 }

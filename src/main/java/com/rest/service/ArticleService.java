@@ -5,4 +5,6 @@ import com.rest.model.Articles;
 public interface ArticleService {
 
 	public Articles getArticle(Integer id);
+
+	public void updateArticle(String topic, String content);
 }
