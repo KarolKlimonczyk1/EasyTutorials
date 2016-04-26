@@ -33,6 +33,7 @@
 <script src="loading.js"></script>
 	<script src="articleEditorController.js"></script>
 	<script src="htmlInjection.js"></script>
+	<script src="articlesListController.js"></script>
 
 <!-- initialize smooth scroll -->
 <script>
@@ -220,11 +221,11 @@
 
 	<div class="aboutUs" data-ng-controller="ArticleEditor">
 		<h1> Admin area</h1>
-		<select>
-			<option value="volvo">Volvo</option>
-			<option value="vw">vw</option>
-			<option value="audi">audi</option>
-		</select>
+		<div data-ng-controller="ArticleListCtrl">
+			<select ng-model="newArticle" ng-options="article.topic for article in articleList"></select>
+			Set new topic name: <input type="text" id="topicName">
+		</div>
+
 		<form data-ng-submit="setArticle()">
 			<%--<form data-ng-submit="setArticle(articleEditor.content)" >--%>
 			<custom_textarea id="myid"
