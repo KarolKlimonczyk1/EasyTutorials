@@ -13,21 +13,26 @@
 <%-- 	value="${fn:substring(url, 0, fn:length(url) - fn:length(req.requestURI))}${req.contextPath}/" /> --%>
 
 <!doctype html>
-<html data-ng-app>
+<html>
 <head>
 <title>Can You?</title>
-<script
-	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
-<script src="http://code.jquery.com/jquery-latest.min.js"
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular-route.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular-sanitize.min.js"></script>
+
+	<script src="http://code.jquery.com/jquery-latest.min.js"
 	type="text/javascript"></script>
 <script src="menuScript.js"></script>
 <script src="smooth-scrolling.js"></script>
 
 <!--  angular files -->
+
 <script src="angular.js"></script>
 <script src="emailController.js"></script>
 <script src="loading.js"></script>
 	<script src="articleEditorController.js"></script>
+	<script src="htmlInjection.js"></script>
 
 <!-- initialize smooth scroll -->
 <script>
@@ -84,7 +89,7 @@
 
 </head>
 
-<body>
+<body ng-app="myapp">
 
 	<div id='cssmenu'>
 		<ul>
@@ -158,7 +163,7 @@
 	</div>
 
 
-	<div class="aboutUs" id="aboutUs" data-ng-controller="List">
+	<div class="aboutUs" id="aboutUs" ng-controller="Ctrl">
 
 		<div class="aboutUs-text">
 			<h1>
@@ -181,7 +186,9 @@
 			</ul>
 		</div>
 
-		<div class="article-content">{{article.content}}</div>
+
+		<div class="article-content" ng-bind-html="article.content">
+		</div>
 
 
 	</div>
@@ -212,7 +219,12 @@
 
 
 	<div class="aboutUs" data-ng-controller="ArticleEditor">
-
+		<h1> Admin area</h1>
+		<select>
+			<option value="volvo">Volvo</option>
+			<option value="vw">vw</option>
+			<option value="audi">audi</option>
+		</select>
 		<form data-ng-submit="setArticle()">
 			<%--<form data-ng-submit="setArticle(articleEditor.content)" >--%>
 			<custom_textarea id="myid"

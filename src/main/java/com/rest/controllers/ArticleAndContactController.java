@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.util.HtmlUtils;
 
 @RestController
 public class ArticleAndContactController {
@@ -22,8 +23,12 @@ public class ArticleAndContactController {
 	@RequestMapping(value = "/list", method = RequestMethod.POST, headers = "Accept=application/json")
 	public Articles getArticle(@RequestBody String json)
 	{
-		System.out.println("List controller");
-		return jsonParserService.parseArticle(json);
+		Articles article = jsonParserService.parseArticle(json);
+		article.setContent(HtmlUtils.htmlUnescape(article.getContent()));
+
+		System.out.println(article.getContent());
+//		return jsonParserService.parseArticle(json);
+		return article;
 	}
 
 	@RequestMapping(value = "/sendEmail", method = RequestMethod.POST, headers = "Accept=application/json")

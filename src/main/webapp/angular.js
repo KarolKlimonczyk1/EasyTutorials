@@ -1,3 +1,4 @@
+
 var urlBase = "http://localhost:8080/mavenWebApp";
 var articleJson = {
 	"id" : 1,

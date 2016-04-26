@@ -21,5 +21,11 @@ public class ChangeViewController {
 	
 		return "cpp-basic";
 	}
+
+	@RequestMapping(value = "/test", method = RequestMethod.GET)
+	public String test() {
+
+		return "test";
+	}
 	
 }
