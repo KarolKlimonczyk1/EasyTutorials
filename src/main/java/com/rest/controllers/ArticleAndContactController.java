@@ -2,6 +2,7 @@ package com.rest.controllers;
 
 import com.rest.model.Articles;
 import com.rest.model.EmailTemplate;
+import com.rest.service.ArticleService;
 import com.rest.service.EmailService;
 import com.rest.service.JsonParserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +24,9 @@ public class ArticleAndContactController {
 	@Autowired
 	private EmailService emailService;
 
+	@Autowired
+	ArticleService articleService;
+
 	@RequestMapping(value = "/list", method = RequestMethod.POST, headers = "Accept=application/json")
 	public Articles getArticle(@RequestBody String json)
 	{
@@ -31,23 +35,9 @@ public class ArticleAndContactController {
 
 	@RequestMapping(value = "/article-list", method = RequestMethod.POST, headers = "Accept=application/json")
 	public List<Articles> getArticleList() {
-		List<Articles> list = new ArrayList<Articles>();
-		Articles art1 = new Articles();
-		art1.setContent("das");
-		art1.setId(1);
-		art1.setTopic("topic1");
 
-		Articles art2 = new Articles();
-		art2.setContent("da222s");
-		art2.setId(2);
-		art2.setTopic("topic222");
-		list.add(art1);
-		list.add(art2);
-
-		System.out.println("Article list");
-		return list;
+		return articleService.getArticles();
 	}
-
 
 	@RequestMapping(value = "/sendEmail", method = RequestMethod.POST, headers = "Accept=application/json")
 	public void sendEmail(@RequestBody String json)

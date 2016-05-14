@@ -222,7 +222,8 @@
 	<div class="aboutUs" data-ng-controller="ArticleEditor">
 		<h1> Admin area</h1>
 		<div data-ng-controller="ArticleListCtrl">
-			<select ng-model="newArticle" ng-options="article.topic for article in articleList"></select>
+			<select id="oldTopic" ng-model="changedArticle"
+					ng-options="article.topic for article in articleList"></select>
 			Set new topic name: <input type="text" id="topicName">
 		</div>
 

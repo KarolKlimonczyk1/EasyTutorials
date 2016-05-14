@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import javax.inject.Inject;
 
+import com.rest.model.ChangedArticle;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -56,5 +57,25 @@ public class JsonParserService {
 		}
 		
 		return emailTemplate;
+	}
+
+	public ChangedArticle parseNewArticle(String json) {
+
+		ChangedArticle changedArticle = new ChangedArticle();
+
+		ObjectMapper mapper = new ObjectMapper();
+
+		try {
+			changedArticle = mapper.readValue(json, ChangedArticle.class);
+		} catch (JsonParseException e) {
+			e.printStackTrace();
+		} catch (JsonMappingException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		return changedArticle;
+
 	}
 }
