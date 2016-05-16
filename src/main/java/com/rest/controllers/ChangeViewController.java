@@ -17,10 +17,15 @@ import javax.servlet.http.HttpServletResponse;
 public class ChangeViewController {
 
 
-	@RequestMapping(value = "/login", method = RequestMethod.GET)
-	public String loginPage() {
-		return "login";
+	@RequestMapping(value = "/", method = RequestMethod.GET)
+	public String welcomePage() {
+		return "index";
 	}
+
+//	@RequestMapping(value = "/login", method = RequestMethod.GET)
+//	public String loginPage() {
+//		return "login";
+//	}
 
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)
 	public String logoutPage(HttpServletRequest request, HttpServletResponse response) {
@@ -34,9 +39,10 @@ public class ChangeViewController {
 	@RequestMapping(value = "/java-basic", method = RequestMethod.GET)
 	public String javaBasic(ModelMap modelMap) {
 
-//		modelMap.addAttribute("user", getPrincipal());
+		modelMap.addAttribute("user", getPrincipal());
 		return "javaBasic";
 	}
+
 	
 	
 	@RequestMapping(value = "/cplus-basic", method = RequestMethod.GET)
@@ -51,15 +57,31 @@ public class ChangeViewController {
 		return "test";
 	}
 
-//	private String getPrincipal(){
-//		String userName = null;
-//		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-//
-//		if (principal instanceof UserDetails) {
-//			userName = ((UserDetails)principal).getUsername();
-//		} else {
-//			userName = principal.toString();
-//		}
-//		return userName;
-//	}
+	@RequestMapping(value = "/access_denied", method = RequestMethod.POST)
+	public String accessDenied() {
+
+		return "access_denied";
+	}
+
+
+	@RequestMapping(value = "/admin", method = RequestMethod.GET)
+	public String admin() {
+
+		return "admin";
+	}
+
+
+	private String getPrincipal() {
+		String userName = null;
+		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+
+		if (principal instanceof UserDetails) {
+			userName = ((UserDetails) principal).getUsername();
+		} else {
+			userName = principal.toString();
+		}
+		return userName;
+	}
+
+
 }

@@ -13,6 +13,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.Ordered;
+import org.springframework.format.FormatterRegistry;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
 
 import com.rest.service.JsonParserService;
@@ -26,8 +27,13 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 
 @Configuration
+//@EnableWebMvc
+//@ComponentScan(basePackages = "com.rest.*")
 public class AppConfig extends WebMvcConfigurerAdapter {
 
+
+	@Autowired
+	RoleToUserProfileConverter roleToUserProfileConverter;
 
 	@Bean
 	public ViewResolver viewResolver() {
@@ -46,11 +52,16 @@ public class AppConfig extends WebMvcConfigurerAdapter {
 //		registry.setOrder(Ordered.HIGHEST_PRECEDENCE);
 //	}
 //
-//	@Override
-//	public void addResourceHandlers(ResourceHandlerRegistry registry) {
-//		registry.addResourceHandler("/static/**").addResourceLocations("/static/");
-//	}
-	
+@Override
+public void addResourceHandlers(ResourceHandlerRegistry registry) {
+	registry.addResourceHandler("/static/**").addResourceLocations("/static/");
+}
+
+	@Override
+	public void addFormatters(FormatterRegistry registry) {
+		registry.addConverter(roleToUserProfileConverter);
+	}
+
 	@Bean
 	public Properties javaMailProperties(){
 		Properties properties=new Properties();

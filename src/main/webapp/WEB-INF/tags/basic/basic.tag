@@ -218,28 +218,6 @@
 
 	</div>
 
-
-	<div class="aboutUs" data-ng-controller="ArticleEditor">
-		<h1> Admin area</h1>
-		<div data-ng-controller="ArticleListCtrl">
-			<select id="oldTopic" ng-model="changedArticle"
-					ng-options="article.topic for article in articleList"></select>
-			Set new topic name: <input type="text" id="topicName">
-		</div>
-
-		<form data-ng-submit="setArticle()">
-			<%--<form data-ng-submit="setArticle(articleEditor.content)" >--%>
-			<custom_textarea id="myid"
-			<%--data-ng-model="articleEditor.content" placeholder="Article Editor" --%>
-			></custom_textarea>
-			<input type="submit" class="button" value="Send"/>
-
-
-		</form>
-
-	</div>
-
-
 	</div>
 
 </body>
