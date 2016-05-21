@@ -2,9 +2,11 @@ package com.rest.controllers;
 
 import com.rest.model.Articles;
 import com.rest.model.EmailTemplate;
+import com.rest.model.TutorialsMenu;
 import com.rest.service.ArticleService;
 import com.rest.service.EmailService;
 import com.rest.service.JsonParserService;
+import com.rest.service.TutorialsMenuService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,6 +28,9 @@ public class ArticleAndContactController {
 
 	@Autowired
 	ArticleService articleService;
+
+	@Autowired
+	TutorialsMenuService tutorialsMenuService;
 
 	@RequestMapping(value = "/list", method = RequestMethod.POST, headers = "Accept=application/json")
 	public Articles getArticle(@RequestBody String json)
@@ -61,5 +66,19 @@ public class ArticleAndContactController {
 								+ "	please do not answer on this message.");
 
 	}
+
+	@RequestMapping(value = "/updatetutorialsmenu", method = RequestMethod.POST, headers = "Accept=application/json")
+	public void changeTutorialMenu(@RequestBody String json) {
+		System.out.println("ChangeTutorialsMenu, json: " + json);
+		tutorialsMenuService.updateTutorialsMenu(jsonParserService.parseTutorialsMenu(json));
+	}
+
+	@RequestMapping(value = "/gettutorials", method = RequestMethod.POST, headers = "Accept=application/json")
+	public List<TutorialsMenu> getTutorialsMenu() {
+		System.out.println("here is a get-tutorials-menu");
+		System.out.println(tutorialsMenuService.getTutorialsMenu());
+		return tutorialsMenuService.getTutorialsMenu();
+	}
+
 
 }

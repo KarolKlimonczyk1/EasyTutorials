@@ -123,41 +123,45 @@
 			</h1>
 			<p>start Your adventure and select one of series</p>
 
+
 		</div>
 
-		<div class="row">
+
+		<div class="row" ng-controller="pictureController">
 			<div class="img-container col-xs-6 col-sm-3 col-md-2  col-xl-1">
 				<a href="http://localhost:8080/mavenWebApp/cplus-basic"  target="_blank" ><img
-						src="http://www.paperoff.com.br/img/brain.png"
+						src="{{tutorialsMenu[0].picture}}"
 						alt="" /> </a>
 				<p>C++ Basic</p>
 			</div>
 			<div class="img-container col-xs-6 col-sm-3 col-md-2  col-xl-1">
 				<a href="http://localhost:8080/mavenWebApp/java-basic"  target="_blank" ><img
-					src="https://www.kyleadams.me/wp-content/uploads/2014/10/blogicon2.png"
-					alt="" /> </a>
+						src="{{tutorialsMenu[1].picture}}"
+						alt="" /> </a>
 				<p>JAVA Basic</p>
+				{{myvar}}
 			</div>
 			<div class="img-container col-xs-6 col-sm-3 col-md-2  col-xl-1">
 				<img
-					src="https://cdn3.iconfinder.com/data/icons/brain-games/1042/Puzzle.png"
-					alt="" />
-				<p>JAVA Advance</p>
+						src="{{tutorialsMenu[2].picture}}"
+						alt="" />
+				<p>LINUX Basic</p>
 			</div>
 			<div class="img-container col-xs-6 col-sm-3 col-md-2  col-xl-1">
 				<img
-					src="https://cdn3.iconfinder.com/data/icons/brain-games/1042/Tic-Tac-Toe-Game.png"
-					alt="" />
+						src="{{tutorialsMenu[3].picture}}"
+						alt="" />
 				<p>MySql Basic</p>
 			</div>
 			<div class="img-container col-xs-6 col-sm-3 col-md-2  col-xl-1">
-				<img src="http://www.paperoff.com.br/img/brain.png" alt="" />
+				<img src="{{tutorialsMenu[4].picture}}"
+					 alt=""/>
 				<p>JavaScript Basic</p>
 			</div>
 			<div class="img-container col-xs-6 col-sm-3 col-md-2  col-xl-1">
 				<img
-					src="https://cdn3.iconfinder.com/data/icons/brain-games/1042/Chess-Game.png"
-					alt="" />
+						src="{{tutorialsMenu[5].picture}}"
+						alt="" />
 				<p>Spring Framework Basic</p>
 			</div>
 		</div>

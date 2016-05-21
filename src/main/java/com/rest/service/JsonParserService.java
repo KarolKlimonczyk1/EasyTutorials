@@ -4,16 +4,13 @@ import java.io.IOException;
 
 import javax.inject.Inject;
 
-import com.rest.model.ChangedArticle;
+import com.rest.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.rest.model.Articles;
-import com.rest.model.ArticlesShortcut;
-import com.rest.model.EmailTemplate;
 
 @Service
 public class JsonParserService {
@@ -78,4 +75,26 @@ public class JsonParserService {
 		return changedArticle;
 
 	}
+
+
+	public TutorialsMenu parseTutorialsMenu(String json) {
+
+		TutorialsMenu tutorialsMenu = new TutorialsMenu();
+
+		ObjectMapper mapper = new ObjectMapper();
+
+		try {
+			tutorialsMenu = mapper.readValue(json, TutorialsMenu.class);
+		} catch (JsonParseException e) {
+			e.printStackTrace();
+		} catch (JsonMappingException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		return tutorialsMenu;
+
+	}
+
 }

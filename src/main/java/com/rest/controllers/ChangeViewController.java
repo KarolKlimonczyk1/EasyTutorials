@@ -1,13 +1,16 @@
 package com.rest.controllers;
 
+import com.sun.deploy.net.HttpResponse;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -24,6 +27,7 @@ public class ChangeViewController {
 
 //	@RequestMapping(value = "/login", method = RequestMethod.GET)
 //	public String loginPage() {
+//		System.out.println("Here is login page");
 //		return "login";
 //	}
 
@@ -37,9 +41,12 @@ public class ChangeViewController {
 	}
 
 	@RequestMapping(value = "/java-basic", method = RequestMethod.GET)
-	public String javaBasic(ModelMap modelMap) {
+	public String javaBasic(Model model) {
 
-		modelMap.addAttribute("user", getPrincipal());
+		String javaurl = "https://www.youtube.com/embed/watch?v=Sv6dMFF_yts&list=RDgnhXHvRoUd0&index=22" + "&output=embed";
+
+		model.addAttribute("greetings", "I came from Model not ModelAttribute");
+
 		return "javaBasic";
 	}
 

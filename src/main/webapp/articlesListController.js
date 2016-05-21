@@ -1,6 +1,5 @@
 var urlBase = "http://localhost:8080/mavenWebApp";
 
-
 function getCsrfHeader() {
     var csrfToken = $("input[name='_csrf']").val();
 
@@ -26,4 +25,37 @@ app.controller('ArticleListCtrl', function ($scope, $http, $sce) {
             $scope.articleList = data;
         }
     );
+});
+
+
+app.controller('pictureController', function ($scope, $http) {
+
+
+    $http.post(urlBase + '/gettutorials').success(function (data) {
+
+            $scope.tutorialsMenu = data;
+        }
+    ).error(function () {
+        alert("picture controller error! Data:");
+
+    });
+
+
+    $scope.setTutorialsMenu = function (data) {
+
+        var json = {
+            "title": data.title,
+            "picture": data.picture
+        };
+
+        $http.post(urlBase + '/updatetutorialsmenu', json).success(function () {
+
+                $scope.java.picture = "";
+                $scope.cpp.picture = "";
+                $scope.linux.picture = "";
+            }
+        ).error(function () {
+            alert("set tutorial error");
+        });
+    }
 });
