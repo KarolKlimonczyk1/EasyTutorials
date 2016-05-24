@@ -27,13 +27,13 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 
 @Configuration
-//@EnableWebMvc
-//@ComponentScan(basePackages = "com.rest.*")
+@EnableWebMvc
+@ComponentScan(basePackages = "com.rest.*")
 public class AppConfig extends WebMvcConfigurerAdapter {
 
 
-	@Autowired
-	RoleToUserProfileConverter roleToUserProfileConverter;
+//	@Autowired
+//	RoleToUserProfileConverter roleToUserProfileConverter;
 
 	@Bean
 	public ViewResolver viewResolver() {
@@ -57,10 +57,10 @@ public void addResourceHandlers(ResourceHandlerRegistry registry) {
 	registry.addResourceHandler("/static/**").addResourceLocations("/static/");
 }
 
-	@Override
-	public void addFormatters(FormatterRegistry registry) {
-		registry.addConverter(roleToUserProfileConverter);
-	}
+//	@Override
+//	public void addFormatters(FormatterRegistry registry) {
+//		registry.addConverter(roleToUserProfileConverter);
+//	}
 
 	@Bean
 	public Properties javaMailProperties(){
