@@ -34,6 +34,7 @@
 	<script src="articleEditorController.js"></script>
 	<script src="htmlInjection.js"></script>
 	<script src="articlesListController.js"></script>
+	<script src="noframework.waypoints.min.js"></script>
 
 <!-- initialize smooth scroll -->
 <script>
@@ -77,7 +78,8 @@
 
 	<%--------------------------------------------------%>
 
-<link rel="stylesheet"
+
+	<link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
 	integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
 	crossorigin="anonymous">
@@ -104,30 +106,49 @@
 	<!-- header  -->
 	<header class="text-center" id="home">
 
-		<div class="intro-text">
+		<div id="welcome" class="os-slow">
 			<h1>
 				EASY <strong><span class="color">PROGRAMMING</span></strong>
 			</h1>
 			<p>the simplest tutorials with the best knowledge</p>
 			<a href="#aboutUs" class="btnAboutUs">About us</a>
 		</div>
+
+
+		<script>
+
+
+			var wp = new Waypoint({
+				element: document.getElementById('home'),
+				handler: function (direction) {
+					if (direction === 'down') {
+						$('#welcome').addClass('os-slow2');
+					}
+					else {
+						$('#welcome').removeClass('os-slow2');
+					}
+				}, offset: 25
+			})
+
+		</script>
+
 	</header>
 
 
 
 	<div class="tutorials container-fluid" id="tutorials">
 
-		<div class="tutorial-text">
+		<div id="tutorial-welcome" class="os-animation">
+
 			<h1>
 				<strong>SELECT YOUR WAY!</strong>
 			</h1>
 			<p>start Your adventure and select one of series</p>
 
-
 		</div>
 
 
-		<div class="row" ng-controller="pictureController">
+		<div id="first-row" class="os-slow" ng-controller="pictureController">
 			<div class="img-container col-xs-6 col-sm-3 col-md-2  col-xl-1">
 				<a href="http://localhost:8080/mavenWebApp/cplus-basic"  target="_blank" ><img
 						src="{{tutorialsMenu[0].picture}}"
@@ -164,13 +185,37 @@
 						alt="" />
 				<p>Spring Framework Basic</p>
 			</div>
+
+
 		</div>
+
+
+		<script>
+
+
+			var waypoint = new Waypoint({
+				element: document.getElementById('tutorials'),
+				handler: function (direction) {
+					if (direction === 'down') {
+						$('#tutorial-welcome').addClass('os-animation2');
+						$('#first-row').addClass('os-slow2');
+					}
+					else {
+						$('#tutorial-welcome').removeClass('os-animation2');
+						$('#first-row').removeClass('os-slow2');
+					}
+				}, offset: 25
+			})
+
+		</script>
+
+
 	</div>
 
 
 	<div class="aboutUs" id="aboutUs" ng-controller="Ctrl">
 
-		<div class="aboutUs-text">
+		<div id="aboutUsText" class="os-animation">
 			<h1>
 				<strong>Are you interested?</strong>
 			</h1>
@@ -195,6 +240,23 @@
 		<div class="article-content" ng-bind-html="article.content">
 		</div>
 
+		<script>
+
+
+			var aboutUsPoint = new Waypoint({
+				element: document.getElementById('aboutUs'),
+				handler: function (direction) {
+					if (direction === 'down') {
+						$('#aboutUsText').addClass('os-animation2');
+					}
+					else {
+						$('#aboutUsText').removeClass('os-animation2');
+						;
+					}
+				}, offset: 25
+			})
+
+		</script>
 
 	</div>
 
@@ -219,8 +281,6 @@
 				class="button" value="Send" />
 			</label> {{messageSending}}
 		</form>
-
-	</div>
 
 	</div>
 

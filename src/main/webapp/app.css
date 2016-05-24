@@ -13,7 +13,8 @@ html, body
 
 /* Home Style */
 header {
-	background: url(http://freedomreply.com/wp-content/uploads/2014/07/Free-Download-Background-Images-For-Website-Design-3.jpg) no-repeat bottom center;
+	/*background: url(http://freedomreply.com/wp-content/uploads/2014/07/Free-Download-Background-Images-For-Website-Design-3.jpg) no-repeat bottom center;*/
+	background: url(http://3.bp.blogspot.com/-xlJzJh-Z-94/Vb58PnLtjMI/AAAAAAAAV70/cTU_1KlXrTY/s1600/funmozar-black-geometric-wallpapers.jpg) no-repeat bottom center;
 	background-size: cover;
 	color: #d9e0e2;
 	position: relative;
@@ -110,7 +111,7 @@ header p {
 .pictureBox {
     overflow:hidden;
     list-style:none;
-    position: central;
+	/*position: central;*/
     color: white;
     
 }
@@ -444,7 +445,83 @@ header p {
 	border-bottom: 1px solid;
 }
 
+.os-animation {
+	opacity: 0;
+	transform: translateX(-100%);
+	transition: transform 500ms;
 
+	position: relative;
+	padding-top: 170px;
+	padding-right: 0;
+	padding-left: 0;
+	padding-bottom: 40px;
+
+}
+
+.os-animation H1 {
+	font-size: 70px;
+	text-transform: uppercase;
+	color: #d9e0e2;
+	letter-spacing: 2px;
+}
+
+.os-animation2 {
+	opacity: 1;
+	transform: translateX(0);
+
+	position: relative;
+	padding-top: 170px;
+	padding-right: 0;
+	padding-left: 0;
+	padding-bottom: 40px;
+
+}
+
+.os-animation2 H1 {
+	font-size: 70px;
+	text-transform: uppercase;
+	color: #d9e0e2;
+	letter-spacing: 2px;
+}
+
+.os-slow {
+	opacity: 0;
+	transform: translateX(-100%);
+	transition: transform 1000ms;
+
+	position: relative;
+	padding-top: 170px;
+	padding-right: 0;
+	padding-left: 0;
+	padding-bottom: 40px;
+
+}
+
+.os-slow H1 {
+	font-size: 70px;
+	text-transform: uppercase;
+	color: #d9e0e2;
+	letter-spacing: 2px;
+}
+
+.os-slow2 {
+	opacity: 1;
+	transform: translateX(0);
+
+	position: relative;
+	padding-top: 170px;
+	padding-right: 0;
+	padding-left: 0;
+	padding-bottom: 40px;
+
+}
+
+.os-slow2 H1 {
+	font-size: 70px;
+	text-transform: uppercase;
+	color: #d9e0e2;
+	letter-spacing: 2px;
+}
 
 
 
